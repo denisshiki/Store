@@ -24,7 +24,7 @@ Como você é um dos poucos integrantes da equipe de ciência de dados da empres
 - __Causa Raiz:__ Entendido a motivação iremos na causa raiz, ou seja, iremos conversar com o CEO e verificar o porque este realizou esta requisição, sendo que ao conversar mais com o CEO, vimos que ele realizou esse pedido de previsão de vendas pois este gostaria de reformar as lojas preexistentes e para isso ele precisaria saber o quanto de dinheiro poderia utilizar para essa reforma.
 
 - __Formato da Solução:__ Entendido a causa raiz do problema iremo combinar o formato de entrega, como no mundo nos negócios tudo é negociável, dissemos  que para ter uma velocidade maior, iremos entregar nesse primeiro ciclo uma tabela contendo o faturamento total previsto com o pior e melhor cenário, para assim ele ter uma idéia do quanto de dinheiro irá chegar na empresa para então realizar a decisão de reformar ou não as lojas ou em quais lojas reformar.
-
+___
 ### Ciclo CRISP
 
 Um método que utilizaremos tanto neste como em outros projetos de portfólio é o método CRISP (Cross Industry Standard Process for Data Mining,)presente no link abaixo: <br>
@@ -40,9 +40,14 @@ O objetivo desse método é passar pela mesma tarefa várias vezes, tendo cada c
  
 - **Limpeza dos Dados:** Realizaremos um preenchimento dos dados faltantes, assim como verificaremos os tipos de dados, estatísticas descritivas e renomeação de colunas.
 
-- **Exploração dos Dados:** Essa é uma das etapas em que realizaremos o levantamento das hipóteses no intuito de gerar "insights" que sejam escaláveis para a empresa.
+- **Exploração dos Dados:** Essa é uma das etapas em que realizaremos o levantamento das hipóteses no intuito de gerar "insights" que sejam escaláveis para a empresa, outro aspecto que iremos realizar é a criação de variáveis e verificação de hipóteses.
 
-- **Modelagem dos Dados:** Chamamos essa etapa de "Feature Engeneering" da qual realizaremos a criação de hipóteses que facilitará 
+- **Modelagem dos Dados:** Nesta realizaremos a rescalonação, transformação e eliminação "outliers" em algumas variáveis, tendo este o intuito de tratar os dados para os algoritmos de "Machine Learning". 
+
+- **Algoritmo de Machine Learning:** Nesta utilizaremos alguns algoritmos utilizando o método de "Cross Validation".
+
+- **Avaliação de Algoritmos:** Neste analisamos a performance dos algoritmos e então verificamos qual o resultado monetário deste.
+ 
 ___
 ### 📚 Dados:
 
@@ -84,23 +89,42 @@ Esse aspecto será importante pois é a partir do levantamento desse mapa mental
 ___
 ## Planejamento da solução:
 
-### 🗺️ Exploração e Alteração de dados:
+Com o problema de negócio e o produto de entrega definido, iremos agora partir para a parte de execução 
 
-A primeira etapa do projeto foi realizar a coleta, tratamento e exploração dos dados. Nessa etapa foi possível realizar identificar necessidades de limpeza e transformação dos dados, sendo que neste projeto, realizamos uma análise estatística descritiva do conjunto de dados assim como também a criação de novas *features* para facilitar e proporcionar as visualizações e criações dos insights gerados a partir de hipótese de negócios que serão apresentados. A motivação da criação das novas features serão explanadas em outro momento.
+### Descrição dos Dados:
 
-  - *season:* estação do ano da venda do imóvel
-  - *yr_life:* anos de vida do imóvel.
-  - *level:* separa o preço dos imóveis em quartis, classificando  
+Nesta iremos realizar uma análise descritiva dos dados, executando as seguintes etapas:
 
-### 📑 Hipóteses de negócios:
+ - Renomear os algumas colunas dos dados
+ - Verificação da dimensão dos dados
+ - Verificação dos tipos de dados
+ - Alteração dos valores "NaN"
+ - Estaísticas descritivas   
 
-No intuito de melhor entender o negócio assim como auxiliar na análise exploratória, realizamos algumas hipóteses:
+### Feature Engeneering:
+
+Nesta realizaremos o levantamento de hipóteses ocorridas durante a montagem do mapa mental na etapa de premissa do negócio, outro aspecto que realizaremos é a "feature engeneering" que é a criação de variáveis que serão utilizadas na etapa de "Análise Exploratória".
+
+### Filtragem de Variáveis:
+
+Nesta filtraremos algumas variáveis, selecionand os dados com os seguintes atributos:
+ - Vendas maiores que 0.
+ - Lojas abertas. 
+ - Eliminação da coluna "open" e "promo_interval".
+
+### Análise Exploratória dos dados:
+
+Esta geralmente é parte em que mais dedicamos tempo sendo que nesta etapa é a que faremos a validação ou não das hipóteses de negócios, sendo estas:  
 
 | __Hipótese__ | __Resultado__ | __Tradução para negócio__ |
 | ------------ | ------------ | ------------ |
-| __H1__ -Imóveis com vista para a água são em média mais caros se sim em quantos %? | Verdadeira | Imóveis com vista para água são aproximadamente 50% mais caros. Procurar investir em imóveis sem vista para água, por terem custo de negócio menor |
-| __H2__ - Imóveis antigos são mais baratos, se sim em quantos %? | Falsa | A idade dos imóveis não contribui para a diminuição do preço dos imóveis |
-| __H3__ - Quais são os atributos que mais contribuem para o aumento do preço? | - | Os atributos que contribuem para o aumento do preços são: ***quantidade de banheiros***, ***design do edifício*** e a ***área do imóvel*** |
+| __H1__ - Loja com maior sortimento (diferentes tipos) tem mais vendas? | Falsa | Supondo que a versão extra é a que contém mais tipos de sortimentos, esta afirmação é falsa, pois o sortimento extra representa uma soma de vendas menor que as com menores variedades. |
+| __H2__ - Lojas com competidores mais próximos, deveriam vender menos? | Falsa | Lojas com competidores próximos vendem mais do que com competidores distantes. |
+| __H3__ - Lojas com concorrentes a mais tempo vendem mais? | Falsa | Há um crescimento das vendas quando ocorre uma abertura de um concorrente próximo e com o tempo as vendas tendem a cair com a prensença de competidores. |
+| __H4__ - Lojas com promoções ativas a mais tempo tendem a vender mais? | Falsa | Quanto mais tempo a promoção ativa menor é o valor de venda. |
+| __H5__ - Loja que tem promoções vendem mais? | Falsa | Lojas que não contém promoções tem uma quantidade média de vendas ligeiramente maior que as lojas com promoções, assim como veremos que a distribuição média de vendas de produtos entre lojas que realizaram a promoção não é distante das lojas que não realizaram esta. |
+| __H6__ - Loja com promoções consecutivas vender mais? | Falsa | Lojas que participam de uma promoção consecutiva contém uma soma de faturamento não muito discrepante das lojas que não participaram das promoções.|
+
 ___
 ### Seleção dos imóveis:
 
