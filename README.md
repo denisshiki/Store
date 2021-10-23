@@ -7,6 +7,8 @@ O resultado final desse projeto será uma tabela contendo o melhor e o pior cen�
 | __Melhor Cenário__ | __Pior Cenário__ | __Previsão__ |
 | ----------------- | ----------------- | ----------------- | 
 | R$ 288.554.280,06 | R$ 286.397.838,89 | R$ 287.476.064,00 |
+
+**O projeto está localizado no link a seguir:** https://github.com/denisshiki/Store/blob/main/rossman_store.ipynb
 ___
 ### 🏢 Contexto do negócio:
 
