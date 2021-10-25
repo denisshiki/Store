@@ -1,6 +1,6 @@
  # 🏬 Previsão de Vendas: Hossman Store
 
-O objetivo desse projeto é fornecer para o time de negócios a previsão de vendas de sues produtos durante as próximas seis semanas utilizando algoritmos de "Machine Learning", além disso realizaremos a validação ou não de hipótestes de negócios, visando gerar insights tanto para a equipe de megócios como para outros times.
+O objetivo desse projeto é fornecer para o time de negócios a previsão de vendas de seus produtos para as próximas seis semanas, utilizando para esta algoritmos de "Machine Learning", além disso realizaremos a validação ou não de hipótestes de negócios, com o intuito de gerar insights tanto para a equipe de megócios como para outros times.
 
 O resultado final desse projeto será uma tabela contendo o melhor e o pior cenário.
 
@@ -12,33 +12,35 @@ O resultado final desse projeto será uma tabela contendo o melhor e o pior cen�
 ___
 ### 🏢 Contexto do negócio:
 
-A Houssman Store é uma plataforma digital que tem como modelo de negócio a compra e a venda de produtos diversos, para melhorar o seu negócios e faturamentos, estes utilizam a tecnologia e os dados gerados por meio dessas tanto para analisar as melhores oportunidades de negócios, como para direcionar a empresa para um caminho.
+A Houssman Store é uma plataforma digital que tem como modelo de negócio e a venda de produtos diversos, sendo que para melhorar o seu faturamentos, eles começaram a utilizam a tecnologia no intuito de gerar dados, tendo este dois objetivos; analisar as melhores oportunidades de negócios, aumento do faturamento a partir destes.
 
-O objetivo do case é fornecer um modelo de previsão da venda de produtos, dando este suporte para as futuras decisões da empresa que pode acatar ou não as previsões desse modelo assim como verificar se este condiz com a realidade das vendas caso a empresa resolva seguir com este modelo.
+O objetivo do case é fornecer um modelo de previsão da venda de produtos, dando este suporte para as futuras decisões da empresa, podendo esta acatar ou não as previsões feitas por esse modelo, assim como verificar se este condiz com a realidade das vendas caso a empresa resolva seguir com este modelo.
 
 ___
 ### 👨‍💼 Questão do negócio:
 
-Como você é um dos poucos integrantes da equipe de ciência de dados da empresa, em um belo dia os gerentes começaram a te ligar pedindo uma previsão de vendas nas próximas seis semanas, antes de iniciar executando a tarefa que lhe foi fornecida você primeiro conversou com os gerentes e depois percorreu os três passos abaixo:
+Como você é um dos poucos integrantes da equipe de ciência de dados da empresa, em um belo dia os gerentes começaram a te ligar pedindo uma previsão de vendas nas próximas seis semanas, antes de iniciar executando imadiatamente a tarefa que lhe foi cabida, você primeiro conversou com os gerentes, percorrendo os três passos abaixo:
 
-- __Motivação:__ qual foi a motivação que os gerentes tiveram para realizar essa requisição sobre a previsão de vendas, sendo que conversando com estes percebemos que a motivação foi o pedido feito pelo CEO da empresa.
+- __Motivação:__ qual foi a motivação que os gerentes tiveram para realizar essa requisição. Durante a conversa com estes percebemos que a motivação foi o pedido feito pelo CEO da empresa.
 
-- __Causa Raiz:__ Entendido a motivação iremos na causa raiz, ou seja, iremos conversar com o CEO e verificar o porque este realizou esta requisição, sendo que ao conversar mais com o CEO, vimos que ele realizou esse pedido de previsão de vendas pois este gostaria de reformar as lojas preexistentes e para isso ele precisaria saber o quanto de dinheiro poderia utilizar para essa reforma.
-
-- __Formato da Solução:__ Entendido a causa raiz do problema iremo combinar o formato de entrega, como no mundo nos negócios tudo é negociável, dissemos  que para ter uma velocidade maior, iremos entregar nesse primeiro ciclo uma tabela contendo o faturamento total previsto com o pior e melhor cenário, para assim ele ter uma idéia do quanto de dinheiro irá chegar na empresa para então realizar a decisão de reformar ou não as lojas ou em quais lojas reformar.
+- __Causa Raiz:__ Entendido a motivação iremos na causa raiz, ou seja, iremos conversar com o CEO e verificar o porque este realizou esta requisição, ao entrarmos em contato com este, vimos que ele realizou esse pedido pois gostaria de utilizar o lucro gerado para reformar as lojas preexistentes.
+ 
+- __Formato da Solução:__ Entendido a causa raiz com o CEO, iremos agora combinar o formato de entrega com ele, como no mundo nos negócios tudo é negociável, dissemos  que para ter uma velocidade maior, iremos entregar nesse primeiro ciclo uma tabela contendo o faturamento total previsto com o pior e melhor cenário, para assim ele ter uma idéia do quanto de dinheiro irá chegar na empresa para então realizar a decisão de reformar ou não as lojas ou em quais lojas reformar.
 ___
 ### Ciclo CRISP
 
 Um método que utilizaremos tanto neste como em outros projetos de portfólio é o método CRISP (Cross Industry Standard Process for Data Mining,)presente no link abaixo: <br>
 https://www.ibm.com/docs/en/spss-modeler/SaaS?topic=dm-crisp-help-overview
 
-O objetivo desse método é passar pela mesma tarefa várias vezes, tendo cada ciclo "end to end", nos dando esse ciclo uma velocidade de entrega assim como o mapeamento de possíveis problemas a serem ocorridos futuramente, sendo que o ciclo que montamos nesse projeto tem o seguinte desenho
+O objetivo desse método é passar pela mesma tarefa várias vezes, tendo cada ciclo "end to end", nos dando esse ciclo uma velocidade de entrega assim como o mapeamento de possíveis problemas a serem ocorridos futuramente, sendo que o ciclo que montamos nesse projeto tem o seguinte desenho esquemático:
 
 ![Captura de tela de 2021-10-22 16-08-23](https://user-images.githubusercontent.com/46419374/138510162-7bf05413-c5ad-495f-94bd-aebbfb8fc897.png)
 
-- **Questão e Entendimento do Negócio:** Nessas etapas como dito anteriormente realizaremos uma conversão com as outras equipes identificando a fonte do problema e em seguida definimos o formato da solução.
+**Observação:** Apesar do ciclo ser o mesmo é bom lembrar que a manipulação dos dados depende do tipo de problema que queremos resolver, portanto é recomendado entender os dados antes de fazer qualquer alteração.
+
+- **Questão e Entendimento do Negócio:** Nessas etapas como dito anteriormente realizaremos uma conversa com as outras equipes para identificar a fonte do problema e definimos o formato da solução.
  
-- **Coleta de Dados:** Neste realizaremos ou uma busca do banco de dados da empresa utilizando SQL ou então buscaremos dados fora destas, nesse projeto os dados foram fornecidos pela plataforma "Kaggle".
+- **Coleta de Dados:** Neste realizaremos ou uma busca do banco de dados da empresa ou então buscaremos dados fora destas, sendo que nesse projeto os dados foram fornecidos pela plataforma "Kaggle".
  
 - **Limpeza dos Dados:** Realizaremos um preenchimento dos dados faltantes, assim como verificaremos os tipos de dados, estatísticas descritivas e renomeação de colunas.
 
@@ -46,9 +48,9 @@ O objetivo desse método é passar pela mesma tarefa várias vezes, tendo cada c
 
 - **Modelagem dos Dados:** Nesta realizaremos a rescalonação, transformação e eliminação "outliers" em algumas variáveis, tendo este o intuito de tratar os dados para os algoritmos de "Machine Learning". 
 
-- **Algoritmo de Machine Learning:** Nesta utilizaremos alguns algoritmos utilizando o método de "Cross Validation".
+- **Algoritmo de Machine Learning:** Nesta aplicaremos alguns algoritmos utilizando o método "Cross Validation".
 
-- **Avaliação de Algoritmos:** Neste analisamos a performance dos algoritmos e então verificamos qual o resultado monetário deste.
+- **Avaliação de Algoritmos:** Neste analisamos a performance dos algoritmos e então verificamos qual o seu resultado monetário.
  
 ___
 ### 📚 Dados:
@@ -86,12 +88,12 @@ Uma das formas de gerar insights para o negócio é realizando um "mapa mental" 
 
 ![Captura de tela de 2021-10-22 14-59-40](https://user-images.githubusercontent.com/46419374/138501756-a4d9bb5f-9932-42ea-a9bb-9b62173ac194.png)
 
-Esse aspecto será importante pois é a partir do levantamento desse mapa mental que iremos validar as hipóteses de negócios conforme nas etapas 
+Esse aspecto será importante pois é a partir do levantamento desse mapa mental que iremos validar as hipóteses de negócios presente na etapa de análise exploratória dos dados. 
 
 ___
 ## Planejamento da solução:
 
-Com o problema de negócio e o produto de entrega definido, iremos agora partir para a parte de execução 
+Com o problema de negócio e o produto de entrega definido, iremos agora partir para a parte de execução: 
 ___
 ### Descrição dos Dados:
 
@@ -143,14 +145,14 @@ Ao realizarmos os testes de hipóteses, selecionamos algumas variáveis que cons
 ___
 ### Preparação dos Dados:
 
-Após realizar o selecionamento de váriáveis, em seguida iremos realizar o tratamento dos dados, nesta transformamos todas as variáveis categóricas em numéricas assim como colocando algumas variáveis numéricas em uma faixa de valores, realizamos as seguintes etapas:
+Após realizar o selecionamento de váriáveis em seguida iremos realizar o tratamento dos dados, nesta transformamos todas as variáveis categóricas em numéricas assim como colocaremos algumas variáveis numéricas em uma faixa de valores pré estabelecida, resultando nas seguintes etapas:
   - __Normalização:__ Verificamos se a variável de interesse (sales) tem um comportamento normal.
-  - __Rescalonamento:__ Iremos reescalonar as variáveis numéricas, eliminando nesta a presença de outliers e transformando os dados numéricos em uma faixa de valores entre 0 e 1.
+  - __Rescalonamento:__ Reescalonamento as variáveis numéricas eliminando nesta a presença de outliers e transformando os dados numéricos em uma faixa de valores entre 0 e 1.
   - __Transformação:__ Nesta iremos transformar os dados cíclicos (Mês, dia, semana, semana_ano) em valores numéricos.
   - __Encoding:__ Tranformação dos dados categóricos em numéricos.
 ___
 ### Seleção de Variáveis:
-Feita a preparação dos dados para os algoritmos de "Machine Learning" iremos agora selecionar as variáveis (colunas) que iremos inserir em nossos algoritmos. Realizamos uma primeira seleção das variáveis com o teste de hipóteses e faremos uma outra seleção utilizando nesta algoritmos direcionados a este fim, neste caso utilizaremos o algoritmo BORUTA. 
+Feita a preparação dos dados para os algoritmos de "Machine Learning" iremos agora selecionar as variáveis (colunas) que iremos inserir em nossos algoritmos. Nesse primeiro ciclo do CRISP, iremos aplicar o algoritmo BORUTA para a seleção das variáveis que serão utilizadas no modelo de "Machine Learning". 
 
 **Observação:** Como este é o primeiro ciclo do CRISP iremos inicialmente pegar o resultado do algoritmo BORUTA e aplicar nos modelos, sendo que nos proximos ciclos iremos fazer uma melhor seleção das variáveis de acordo com o negócio.
 ___
@@ -173,7 +175,7 @@ Sendo que neste projetos utilizamos 5 modelos, sendo esses:
       - **Random Forest Cross Validation**
       - **XBoost Regressor Cross Validation**
   
-Poderíamos treinar mais modelos, mas como temos o intuito de fazer a primeira entrega desse ciclo o mais rápido possível, resolvemos treinar o nosso modelo somente com esses algoritmos e escolhemos então qual teve o melhor desempenho considerando na decisão tanto o tempo levado como o consumo de memória. Com isso consideramos o modelo XGBoost mais adequado.
+Poderíamos treinar mais modelos, mas como temos o intuito de fazer a primeira entrega desse ciclo o mais rápido possível, resolvemos treinar o nosso modelo somente com esses cinco algoritmos e então escolhemos qual teve o melhor desempenho, considerando tanto o tempo levado como o consumo de memória. Com isso consideramos o modelo XGBoost mais adequado.
 
 ___
 ### Seleção de Hiperparâmetros:
