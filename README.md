@@ -1,6 +1,6 @@
  # 🏬 Previsão de Vendas: Hossman Store
 
-O objetivo desse projeto é fornecer para o time de negócios uma previsão de vendas de produtos durante as próximas seis semanas, utilizando para essa algoritmos de "Machine Learning" para nos. Outro aspectos que realizamos é a validação ou não de hipótestes de negócios das quais visam gerar insights tanto para a equipe de megócios como para outros times.
+O objetivo desse projeto é fornecer para o time de negócios a previsão de vendas de sues produtos durante as próximas seis semanas utilizando algoritmos de "Machine Learning", além disso realizaremos a validação ou não de hipótestes de negócios, visando gerar insights tanto para a equipe de megócios como para outros times.
 
 O resultado final desse projeto será uma tabela contendo o melhor e o pior cenário.
 
